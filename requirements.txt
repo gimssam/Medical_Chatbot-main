@@ -1,0 +1,14 @@
+numpy
+pandas
+streamlit 
+openai
+python-dotenv
+streamlit-folium
+streamlit-geolocation
+fastapi==0.115.0
+langchain
+langchain-openai
+langchain-community==0.0.19
+unstructured
+python-magic-bin
+faiss-cpu
