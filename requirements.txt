@@ -1,4 +1,3 @@
-# requirements.txt 설정 기준안
 streamlit
 pandas
 folium
@@ -9,4 +8,4 @@ streamlit-geolocation
 langchain
 unstructured
 faiss-cpu
-python-magic
+pure-magic
