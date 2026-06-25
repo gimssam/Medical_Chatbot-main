@@ -6,6 +6,9 @@ openai
 python-dotenv
 streamlit-geolocation
 langchain
+langchain-openai
+langchain-community
+langchain-text-splitters
 unstructured
 faiss-cpu
-pure-magic
+python-magic
