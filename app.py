@@ -1,3 +1,11 @@
+# app.py 파일의 가장 첫 번째 줄에 주입 (최우선 실행 필수)
+import sys
+try:
+    import puremagic as magic
+    sys.modules['magic'] = magic
+except ImportError:
+    pass
+
 import os
 import csv
 import streamlit as st
