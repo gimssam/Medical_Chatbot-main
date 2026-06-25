@@ -12,18 +12,19 @@ from streamlit_geolocation import streamlit_geolocation
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.document_loaders import UnstructuredFileLoader
 from langchain_text_splitters import CharacterTextSplitter
-from langchain.embeddings import CacheBackedEmbeddings
+from langchain_classic.storage import LocalFileStore
+from langchain_classic.embeddings import CacheBackedEmbeddings
 from langchain_community.vectorstores import FAISS
-from langchain.storage import LocalFileStore
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 
 # 환경 변수를 로드합니다.
+load_dotenv(override=True) #(현재 env로 덮어쓰기 파라미터)
 load_dotenv()
 
-# API 키를 환경 변수에서 가져옵니다.
-API_KEY = os.getenv("API_KEY")
-os.environ["OPENAI_API_KEY"] = API_KEY 
+# API 키를 환경 변수에서 가져옵니다. = 아래 주석 처리
+# API_KEY = os.getenv("API_KEY")
+# os.environ["OPENAI_API_KEY"] = API_KEY 
 
 # Langchain을 활용하기 위한 설정과 RAG 설정을 진행합니다.
 llm = ChatOpenAI(model='gpt-4o-mini',
