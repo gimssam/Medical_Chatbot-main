@@ -1,11 +1,3 @@
-# app.py 파일의 가장 첫 번째 줄에 주입 (최우선 실행 필수)
-import sys
-try:
-    import puremagic as magic
-    sys.modules['magic'] = magic
-except ImportError:
-    pass
-
 import os
 import csv
 import streamlit as st
@@ -17,14 +9,14 @@ import openai
 from dotenv import load_dotenv
 from streamlit_geolocation import streamlit_geolocation
 
-from langchain.chat_models import ChatOpenAI
-from langchain.document_loaders import UnstructuredFileLoader
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings, CacheBackedEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_community.document_loaders import UnstructuredFileLoader
+from langchain_text_splitters import CharacterTextSplitter
+from langchain.embeddings import CacheBackedEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain.storage import LocalFileStore
-from langchain.prompts import ChatPromptTemplate
-from langchain.schema.runnable import RunnablePassthrough, RunnableLambda
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 
 # 환경 변수를 로드합니다.
 load_dotenv()
